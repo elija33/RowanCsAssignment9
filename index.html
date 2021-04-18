@@ -58,7 +58,7 @@
     <div class="car"></div>
     <div class="car"></div>
 
-    <p>An Unordered list:</p>
+    <p>An Unordered List:</p>
     <ul>
       <li>Coffee</li>
       <li>Tea</li>
@@ -77,6 +77,11 @@
           x = document.querySelectorAll(".exam");
             for(i = 0; i < x.length; i++){
               x[i].style.background = "LightBlue";
+            }
+            var y = document.getElementByTagName("li");
+            var i;
+            for(i = 0; i < x.length; i++){
+              y[i].style.backgroundColor = "red";
             }
           function myFunction(){
             document.body.style.backgroundColor="DarkGrey";
