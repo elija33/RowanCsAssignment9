@@ -24,7 +24,24 @@
     h1{
       text-align:center;
     }
+
+    h3{
+      text-align:center;
+    }
+
+    .make{
+      text-align:center;
+    }
+
+    #my{
+      width:100%;
+      padding: 50px 0;
+      text-align: center;
+      background-color: lightgreen;
+      margin-top:20px;
+    }
   </style>
+
   <body>
     <h1 id="dom"></h1><br>
     <table>
@@ -66,23 +83,50 @@
     </ul>
 
     <button onclick="Funct()" name="button">Display all the div element in the file</button>
-    <button type="button" onclick="myFunction()">Click Me to See My Color</button>
+    <button type="button" onclick="myFunction()">Click Me to See My Color</button><br><hr>
+
+    <h2>Getting todays Time</h2>
+    <button id="Btn">By Click Here You Will get Today Time</button>
+    <p id="dmo"></p>
 
     <p id="demo"></p>
+
+    <!-- Making content Appear & Disappear-->
+    <div class="make">Making Content Appear and Disappear</div>
+      <button onclick="myFun()" name="button">Click Now and See What will happen</button>
+      <div id="my">
+        This will Appear and Disappear
+      </div>
+      <!-- Dynamically adding Items to a List (UL, OL) -->
+      <h3>Dynamically Ul and Li</h3>
+      <div id="container"></div>
+
 
       <script>
           document.getElementById("dom").innerHTML = "Getting an Element by it's ID";
           document.querySelector("tr").style.backgroundColor="red";
+
+          document.getElementById("Btn").addEventListener("click", displayDate);
+
+          function displayDate() {
+            document.getElementById("dmo").innerHTML = Date();
+          }
+
+          //querySelectorAll('query')
           var x, a, s, y;
           x = document.querySelectorAll(".exam");
             for(i = 0; i < x.length; i++){
               x[i].style.background = "LightBlue";
             }
-            var y = document.getElementByTagName("li");
-            var i;
-            for(i = 0; i < x.length; i++){
-              y[i].style.backgroundColor = "red";
+
+            //getElementsByTagName
+            var y = document.getElementsByTagName("Li");
+            var r;
+            for(r = 0; r < y.length; r++){
+              y[r].style.backgroundColor = "#e6e600";
             }
+
+            //d
           function myFunction(){
             document.body.style.backgroundColor="DarkGrey";
           }
@@ -90,13 +134,33 @@
             var x = document.getElementsByClassName("car");
             document.getElementById("demo").innerHTML = x.length;
           }
-        </script>
+
+          // Making content Appear & Disappear//
+          function myFun() {
+            var x = document.getElementById("my");
+            if (x.style.display === "none") {
+              x.style.display = "block";
+            } else {
+              x.style.display = "none";
+            }
+          }
+
+          //Dynamically adding Items to a List (UL, OL)
+          var arr = ['Food', 'Car', 'Aminal', 'delta'];
+          var cont = document.getElementById('container');
+
+    // create ul element and set the attributes.
+      var ul = document.createElement('ul');
+      ul.setAttribute('style', 'padding: 0; margin: 0;');
+      ul.setAttribute('id', 'theList');
+
+      for (t = 0; t <= arr.length - 1; t++) {
+          var li = document.createElement('li');
+          li.innerHTML = arr[t];
+          li.setAttribute('style', 'display: block;');
+          ul.appendChild(li);
+        }
+        cont.appendChild(ul);
+      </script>
   </body>
 </html>
-
-Making content Appear & Disappear
-Adding Event Listeners
-Creating an Element & using Append Child
-Dynamically adding Items to a List (UL, OL)
-incorporating classList and apply Add, Remove, Toggle
-Demonstrating Mouseover Events
