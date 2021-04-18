@@ -18,8 +18,12 @@
     }
 
     tr:nth-child(even) {
-  background-color: #dddddd;
-}
+      background-color: #dddddd;
+    }
+
+    h1{
+      text-align:center;
+    }
   </style>
   <body>
     <h1 id="dom"></h1><br>
@@ -49,8 +53,20 @@
         <td>04/27/1981</td>
       </tr>
     </table><br><hr>
+    <div class="car">
 
+    </div>
+    <div class="car">
+
+    </div>
+    <div class="car">
+
+    </div>
+    <button onclick="Funct()" name="button">Display all the div element in the file</button>
     <button type="button" onclick="myFunction()">Click Me to See My Color</button>
+
+    <p id="demo"></p>
+
       <script>
           document.getElementById("dom").innerHTML = "Getting an Element by it's ID";
           document.querySelector("tr").style.backgroundColor="red";
@@ -62,6 +78,18 @@
           function myFunction(){
             document.body.style.backgroundColor="DarkGrey";
           }
-</script>
+          function Funct(){
+            var x = document.getElementsByClassName("car");
+            document.getElementById("demo").innerHTML = x.length;
+          }
+        </script>
   </body>
 </html>
+
+getElementsByTagName
+Making content Appear & Disappear
+Adding Event Listeners
+Creating an Element & using Append Child
+Dynamically adding Items to a List (UL, OL)
+incorporating classList and apply Add, Remove, Toggle
+Demonstrating Mouseover Events
